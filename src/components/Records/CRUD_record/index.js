@@ -14,10 +14,26 @@ class CreateRecord extends Component{
         //     alert('min length for title is 5 symbols and for text is 10 symbols');
         //     return;
         // }
-        let badId = Object.keys(this.props.store).length;
 
+        let items = {...localStorage};
+        let highest = parseInt(Object.keys(items).sort().pop())
+
+        let badId;
+        if( isNaN(highest) ){
+            badId = 0
+        }else{
+            badId = parseInt(Object.keys(this.props.store).length) >= highest ? parseInt(Object.keys(this.props.store).length) : highest + 1;
+        }
         this.props.setNewRecord(badId,title,text);
         //переходим на главную?
+        let obj = {
+            id: badId,
+            title: title,
+            text: text
+        }
+        
+        localStorage.setItem(badId, JSON.stringify(obj));
+
     }
     render(){
         return(

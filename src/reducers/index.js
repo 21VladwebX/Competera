@@ -13,7 +13,8 @@ export default function weather(state = [], action){
     case 'SET_NEW_RECORD':
       return{
         ...state,
-      [action.id]:{           
+      [action.id]:{        
+          id: action.id,   
           title: action.title,
           text: action.text
         }

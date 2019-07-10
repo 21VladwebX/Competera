@@ -6,13 +6,24 @@ class GetAllRecords extends Component{
 
 
     render(){
+              
+      // let parseLocalStorage = JSON.parse(localStorage.getItem(badId))
+      // console.log(parseLocalStorage)
+      let items = {...localStorage}; //
+      // console.log(items[0])
+      
       let store = this.props.store;
       let elems = Array();
+      // if(items){
+      //   items = JSON.parse(items);
+      // }
       if(store){
-        for( let obj in store) {
-          let elem = store[obj]
+        for( let obj in items) {
+          // console.log(obj)
+          let elem = JSON.parse(items[obj])
           let title =  elem.title
-          elems.push( elem.title )
+          // console.log( JSON.parse(elem))
+          elems.push( [[elem.title], [elem.id]] )
         }
       }else{
         elems = Array();
@@ -20,10 +31,10 @@ class GetAllRecords extends Component{
 
       return(
         <div className="getAllRecords">
-          <ul> 
+          <ul>
             {            
             Object.keys(elems).map(key => 
-              <li key={key}>{elems[key]}</li>
+              <li key={key} recid={elems[key][1]}>{elems[key][0]}</li>
             )
           }
           </ul>

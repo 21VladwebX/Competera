@@ -3,13 +3,20 @@ import {connect} from 'react-redux';
 
 //показывает детально запись c возможностью редактирования и удаления
 class Detail extends Component{
-
+    _delete(){
+        console.log('delete')
+    }
+    _edit(){
+        console.log('delete')
+    }
 
     render(){
         return(
             <div className="detail">
                 <h2> TITLE</h2>
                 <span> texttexttexttexttext texttext </span>
+                <button onClick={this._edit.bind(this)}> Edit</button>
+                <button onClick={this._delete.bind(this)}> Delete</button>
             </div>
         );
     }
