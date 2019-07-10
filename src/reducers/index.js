@@ -7,15 +7,14 @@ import { combineReducers } from 'redux';
 // })
 
 export default function weather(state = [], action){
+  // console.log('action');
+  // console.log(action);
+  if(action.type === 'SET_NEW_RECORD'){
 
-//   if(action.type === 'CHANGE_WEATHER'){
-
-//     return{
-//       temp: action.temp,
-//       hum: action.hum,
-//       weath: action.weath,
-//       city: action.city
-//   }
-//   }
+    return{
+      title: action.title,
+      text: action.text
+    }
+  }
   return state;
 }
