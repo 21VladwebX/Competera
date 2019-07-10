@@ -6,33 +6,31 @@ class GetAllRecords extends Component{
 
 
     render(){
+      console.log(this.props)
+      let arr = this.props;
       return(
-        <ul>
-            <li> first </li>
-            <li> second </li>
-            <li> third </li>
-        </ul>
+        <div className="getAllRecords">
+          <ul>
+              {/* {} */}
+          </ul>
+        </div>
       );
     }
 }
 
-export default GetAllRecords;
-// export default connect(
-//     state => ({ // this function is map state to props
-//       store: state //global state
-//     }),
-//     dispatch => ({
-//       onChangeWeather: (temp,hum,weath,city,lat,lon) =>{
-//         dispatch({
-//           type: 'CHANGE_WEATHER',
-//           temp: temp,
-//           hum: hum,
-//           weath: weath,
-//           city: city,
-//           lat: lat,
-//           lon: lon
-//         })
-//       }
-  
-//     })
-//   )(GetAllRecords);
+// export default GetAllRecords;
+export default connect(
+  state => ({ // this function is map state to props
+    store: state //global state
+  }),
+  dispatch => ({
+      setNewRecord: (title,text) =>{
+      dispatch({
+        type: 'SET_NEW_RECORD',
+        title: title,
+        text: text
+      })
+    }
+
+  })
+)(GetAllRecords);

@@ -9,12 +9,14 @@ class CreateRecord extends Component{
         console.log('create');
         let title = document.querySelector('[name="title"]').value,
             text = document.querySelector('[name="text"]').value;
-        console.log(title, text);
-        if(title.length < 5 || text.length < 10){
-            alert('min length for title is 5 symbols and for text is 10 symbols');
-            return;
-        }
-        this.props.setNewRecord(title,text);
+
+        // if(title.length < 5 || text.length < 10){
+        //     alert('min length for title is 5 symbols and for text is 10 symbols');
+        //     return;
+        // }
+        let badId = Object.keys(this.props.store).length;
+
+        this.props.setNewRecord(badId,title,text);
         //переходим на главную?
     }
     render(){
@@ -36,11 +38,12 @@ export default connect(
       store: state //global state
     }),
     dispatch => ({
-        setNewRecord: (title,text) =>{
+        setNewRecord: (id,title,text) =>{
         dispatch({
-          type: 'SET_NEW_RECORD',
-          title: title,
-          text: text
+            type: 'SET_NEW_RECORD',
+            id: id,
+            title: title,
+            text: text
         })
       }
   
