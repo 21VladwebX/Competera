@@ -7,6 +7,7 @@ import {createStore} from  'redux';
 
 import reducer from './reducers';
 
+import  GetAllRecords  from './components/Records/GetAllRecords'
 
 const store = createStore(
   reducer, /* preloadedState, */
@@ -21,6 +22,9 @@ function App() {
   return (
     <div className="App">
       <Provider store={store}>
+        <GetAllRecords>
+
+        </GetAllRecords>
 
       </Provider>
     </div>
