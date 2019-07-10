@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <Provider store={store}>
         <GetAllRecords />
-        <CreateRecord/>
+        {/* <CreateRecord/> */}
       </Provider>
     </div>
   );
