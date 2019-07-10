@@ -8,7 +8,7 @@ import { combineReducers } from 'redux';
 
 export default function weather(state = [], action){
   // console.log('action');
-  console.log(action.id);
+  // console.log(action.id);
   switch (action.type){
     case 'SET_NEW_RECORD':
       return{

@@ -6,12 +6,26 @@ class GetAllRecords extends Component{
 
 
     render(){
-      console.log(this.props)
-      let arr = this.props;
+      let store = this.props.store;
+      let elems = Array();
+      if(store){
+        for( let obj in store) {
+          let elem = store[obj]
+          let title =  elem.title
+          elems.push( elem.title )
+        }
+      }else{
+        elems = Array();
+      }
+
       return(
         <div className="getAllRecords">
-          <ul>
-              {/* {} */}
+          <ul> 
+            {            
+            Object.keys(elems).map(key => 
+              <li key={key}>{elems[key]}</li>
+            )
+          }
           </ul>
         </div>
       );
@@ -22,15 +36,5 @@ class GetAllRecords extends Component{
 export default connect(
   state => ({ // this function is map state to props
     store: state //global state
-  }),
-  dispatch => ({
-      setNewRecord: (title,text) =>{
-      dispatch({
-        type: 'SET_NEW_RECORD',
-        title: title,
-        text: text
-      })
-    }
-
   })
 )(GetAllRecords);
