@@ -4,7 +4,7 @@ import './App.css';
 
 import {Provider} from 'react-redux';
 import {createStore} from  'redux';
-
+import {Route} from 'react-router-dom'
 import reducer from './reducers';
 
 import  GetAllRecords  from './components/Records/GetAllRecords'
@@ -22,7 +22,19 @@ function App() {
   return (
     <div className="App">
       <Provider store={store}>
-        <GetAllRecords />
+        <nav>
+          <ul>
+            <li>
+              <a href="/">Home (Get all)</a>
+            </li>
+            <li>
+              <a href="/create">Create</a>
+            </li>
+          </ul>
+        </nav>
+        <Route path="/" exact  component={GetAllRecords}  />
+        <Route path="/create" exact component={CreateRecord}   />
+        {/* <GetAllRecords /> */}
         {/* <CreateRecord/> */}
       </Provider>
     </div>
