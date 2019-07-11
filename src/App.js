@@ -11,7 +11,7 @@ import reducer from './reducers';
 import  GetAllRecords  from './components/Records/GetAllRecords'
 import  CreateRecord  from './components/Records/CRUD_record'
 import Detail from './components/Records/Detail';
-// import Increment from './components/Increment'
+
 
 const store = createStore(
   reducer, /* preloadedState, */
