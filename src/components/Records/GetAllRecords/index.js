@@ -19,21 +19,23 @@ class GetAllRecords extends Component{
           let elem = JSON.parse(items[obj])
           let title =  elem.title
 
-          elems.push( [[elem.title], [elem.id]] )
+          elems.push( [elem.title, elem.id] )
         }
       }else{
         elems = Array();
       }
-
+      console.log(elems)
       return(
         <div className="getAllRecords">
           <ul>
             {
-            Object.keys(elems).map(key =>{
-              // let href = '/detail?' + id={elems[key]} 
-              <li key={key} recid={elems[key][1]}>
-              
-              <a href={'/detail?' + {id={elems[key][.]}}}>{elems[key][0]}</a></li>
+              Object.keys(elems).map( (key) => {
+              console.log(key);
+              console.log(elems[key][0]);
+
+              return (<li key={key} recid={elems[key][1]}>
+                        {elems[key][0]}
+                      </li> ) 
             }
             )
           }
