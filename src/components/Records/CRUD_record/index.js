@@ -22,8 +22,9 @@ class CreateRecord extends Component{
         if( isNaN(highest) ){
             badId = 0
         }else{
-            badId = parseInt(Object.keys(this.props.store).length) >= highest ? parseInt(Object.keys(this.props.store).length) : highest + 1;
+            badId = parseInt(Object.keys(this.props.store).length) > highest ? parseInt(Object.keys(this.props.store).length) : highest + 1;
         }
+
         this.props.setNewRecord(badId,title,text);
         //переходим на главную?
         let obj = {
