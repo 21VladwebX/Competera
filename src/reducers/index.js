@@ -1,27 +1,7 @@
 import { combineReducers } from 'redux';
-// import weather from './weather_data';
+import setNew from './SET_NEW';
 
 
-// export default combineReducers({
-//   weather
-// })
-
-export default function weather(state = [], action){
-  // console.log('action');
-  // console.log(action.id);
-  switch (action.type){
-    case 'SET_NEW_RECORD':
-      return{
-        ...state,
-      [action.id]:{        
-          id: action.id,   
-          title: action.title,
-          text: action.text
-        }
-      }
-      break;
-    default: 
-      return state;
-  }
-  
-}
+export default combineReducers({
+  setNew
+})

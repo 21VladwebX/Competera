@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-
+import './crud.css'
 //возможность создания и редактирования записи
 class CreateRecord extends Component{
 

@@ -3,10 +3,7 @@ import {connect} from 'react-redux';
 import RecordsTitle from '../RecordsTitle'
 //вытягивает с локального хранилища данные и показывает их
 class GetAllRecords extends Component{
-  _detail(props){
-    console.log(props)
-    alert(1)
-  }
+
 
     render(){
               

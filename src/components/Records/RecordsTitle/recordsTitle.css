@@ -1,3 +1,10 @@
 .recordsTitle{
-    border: 2px solid grey;
+    border: 2px solid #efefef;
+    max-width: 400px
+}
+.recordsTitle h2{
+    color: #4e5d4e
+}
+.recordsTitle span{
+    color: #696969
 }

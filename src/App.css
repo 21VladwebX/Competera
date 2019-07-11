@@ -1,0 +1,9 @@
+ul{
+    list-style: none;
+}
+nav li a{
+    color: grey
+}
+nav li .active{
+    color: black
+}
