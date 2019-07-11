@@ -10,6 +10,7 @@ import reducer from './reducers';
 
 import  GetAllRecords  from './components/Records/GetAllRecords'
 import  CreateRecord  from './components/Records/CRUD_record'
+import Detail from './components/Records/Detail';
 const store = createStore(
   reducer, /* preloadedState, */
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -35,6 +36,7 @@ function App() {
         </nav>
         <Route path="/" exact  component={GetAllRecords}  />
         <Route path="/create" exact component={CreateRecord}   />
+        <Route path="/detail/:title" exact component={Detail}   />
         {/* <GetAllRecords /> */}
         {/* <CreateRecord/> */}
       </Provider>

@@ -6,9 +6,11 @@ import './recordsTitle.css'
 class RecordsTitle extends Component{
 
     render(){
-        console.log(this.props)
+        // console.log(this.props)
         return(
-            <div className="recordsTitle" recid={this.props.id}>
+            <div className="recordsTitle"
+            onClick = {() => {this.props.history.push('/detail/' + this.props.title.toLowerCase())}}
+            >
                 <h2> {this.props.title}</h2>
                 <span> {this.props.text}</span>
             </div>

@@ -15,7 +15,7 @@ class Detail extends Component{
         console.log(this.props)
         return(
             <div className="detail" >
-                <h2> TITLE</h2>
+                <h2> {this.props.match.params.title}</h2>
                 <span> texttexttexttexttext texttext </span>
                 <button onClick={this._edit.bind(this)}> Edit</button>
                 <button onClick={this._delete.bind(this)}> Delete</button>
