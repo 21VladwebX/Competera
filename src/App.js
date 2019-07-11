@@ -4,8 +4,9 @@ import './App.css';
 
 import {Provider} from 'react-redux';
 import {createStore} from  'redux';
-import {Route} from 'react-router-dom'
+import {Route, NavLink} from 'react-router-dom'
 import reducer from './reducers';
+
 
 import  GetAllRecords  from './components/Records/GetAllRecords'
 import  CreateRecord  from './components/Records/CRUD_record'
@@ -25,10 +26,10 @@ function App() {
         <nav>
           <ul>
             <li>
-              <a href="/">Home (Get all)</a>
+              <NavLink to="/" exact>Home (Get all)</NavLink>
             </li>
             <li>
-              <a href="/create">Create</a>
+              <NavLink to="/create" exact>Create</NavLink>
             </li>
           </ul>
         </nav>

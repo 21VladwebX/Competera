@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-
+import RecordsTitle from '../RecordsTitle'
 //вытягивает с локального хранилища данные и показывает их
 class GetAllRecords extends Component{
-
+  _detail(props){
+    console.log(props)
+    alert(1)
+  }
 
     render(){
               
@@ -11,31 +14,31 @@ class GetAllRecords extends Component{
       let items = {...localStorage}; 
 
       
-      let elems = Array();
+      let elems = [];
 
       if(items){
         for( let obj in items) {
 
           let elem = JSON.parse(items[obj])
-          let title =  elem.title
-
-          elems.push( [elem.title, elem.id] )
+          elems.push( [elem.title, elem.id, elem.text] )
         }
       }else{
-        elems = Array();
+        elems = [];
       }
-      console.log(elems)
+      console.log(this.props)
       return(
         <div className="getAllRecords">
           <ul>
             {
               Object.keys(elems).map( (key) => {
-              console.log(key);
-              console.log(elems[key][0]);
+              
+              return (<li key={key}><RecordsTitle
+                title={elems[key][0]}
+                id={elems[key][1]}
+                text={elems[key][2]}
+                {...this.props}
+              /></li>)
 
-              return (<li key={key} recid={elems[key][1]}>
-                        {elems[key][0]}
-                      </li> ) 
             }
             )
           }

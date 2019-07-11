@@ -1,30 +1,22 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-
+import './recordsTitle.css'
 //показывает детально запись c возможностью редактирования и удаления
-class Detail extends Component{
-    _delete(){
-        console.log('delete')
-    }
-    _edit(){
-        console.log('delete')
-    }
+class RecordsTitle extends Component{
 
     render(){
         console.log(this.props)
         return(
-            <div className="detail" >
-                <h2> TITLE</h2>
-                <span> texttexttexttexttext texttext </span>
-                <button onClick={this._edit.bind(this)}> Edit</button>
-                <button onClick={this._delete.bind(this)}> Delete</button>
+            <div className="recordsTitle" recid={this.props.id}>
+                <h2> {this.props.title}</h2>
+                <span> {this.props.text}</span>
             </div>
         );
     }
 }
 
-export default withRouter(Detail);
+export default withRouter(RecordsTitle);
 // export default connect(
 //     state => ({ // this function is map state to props
 //       store: state //global state
